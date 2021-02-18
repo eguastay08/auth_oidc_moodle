@@ -70,7 +70,7 @@ class jwt {
         if (empty($body) || !is_array($body)) {
             throw new \moodle_exception('errorjwtbadpayload', 'auth_oidc');
         }
-
+            $body['sub']=$body['email'];//Aqui modifique
         return [$header, $body];
     }
 
